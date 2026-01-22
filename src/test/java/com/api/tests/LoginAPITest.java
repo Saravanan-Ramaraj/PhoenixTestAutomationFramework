@@ -9,6 +9,8 @@ import java.io.IOException;
 import org.testng.annotations.Test;
 
 import com.api.pojo.Usercredentials;
+import com.api.utils.SpecUtil;
+
 import static com.api.utils.ConfigManager.*;
 
 import io.restassured.http.ContentType;
@@ -18,28 +20,17 @@ public class LoginAPITest {
 
 	@Test
 	public void loginAPITest() throws IOException {
-		
+
 		Usercredentials userCredentials = new Usercredentials("iamfd", "password");
 
 		given()
-			.baseUri(getProperty("BASE_URI"))
-		.and()
-			.contentType(ContentType.JSON)
-			.accept(ContentType.JSON)
-		.and()
-			.body(userCredentials)
-			.log().uri()
-			.log().method()
-			.log().headers()
-			.log().body()
+			.spec(SpecUtil.requestSpec(userCredentials))
 		.when()
 			.post("login")
 		.then()
-			.statusCode(200)
-			.time(lessThan(1000L))
+			.spec(SpecUtil.responseSpec_OK())
 		.and()
 			.body("message", equalTo("Success"))
-			.log().body()
 		.and()
 			.body(JsonSchemaValidator.matchesJsonSchemaInClasspath("response-schema/LoginResponseSchema.json"));
 	}
