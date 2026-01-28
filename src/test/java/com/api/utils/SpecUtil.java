@@ -2,11 +2,9 @@ package com.api.utils;
 
 import static com.api.utils.AuthTokenProvider.getToken;
 import static com.api.utils.ConfigManager.getProperty;
-
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.lessThan;
 
 import com.api.constant.Roles;
-import com.api.pojo.Usercredentials;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;

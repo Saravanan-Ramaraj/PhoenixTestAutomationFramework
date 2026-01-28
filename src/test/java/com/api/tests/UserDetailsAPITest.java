@@ -2,7 +2,6 @@ package com.api.tests;
 
 import static com.api.constant.Roles.FD;
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.lessThan;
 
 import java.io.IOException;
 

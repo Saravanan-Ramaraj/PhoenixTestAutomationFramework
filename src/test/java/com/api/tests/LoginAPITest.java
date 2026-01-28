@@ -2,7 +2,6 @@ package com.api.tests;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.lessThan;
 
 import java.io.IOException;
 
@@ -11,9 +10,6 @@ import org.testng.annotations.Test;
 import com.api.pojo.Usercredentials;
 import com.api.utils.SpecUtil;
 
-import static com.api.utils.ConfigManager.*;
-
-import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
 
 public class LoginAPITest {
