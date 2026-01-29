@@ -1,14 +1,14 @@
 package com.api.utils;
 
+import static com.api.constant.Roles.ENG;
+import static com.api.constant.Roles.FD;
+import static com.api.constant.Roles.QC;
+import static com.api.constant.Roles.SUP;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
-import java.io.IOException;
-
-import static com.api.constant.Roles.*;
-
 import com.api.constant.Roles;
-import com.api.pojo.Usercredentials;
+import com.api.request.model.Usercredentials;
 
 import io.restassured.http.ContentType;
 
