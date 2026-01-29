@@ -13,19 +13,19 @@ import static org.hamcrest.Matchers.notNullValue;
 
 import org.testng.annotations.Test;
 
-import com.api.utils.SpecUtil;
+import static com.api.utils.SpecUtil.*;
 
 public class CountAPITest {
 
 	
-	@Test
+	@Test(description = "Verify if the count API response is giving correct response", groups = {"api", "regression", "smoke"})
 	public void verifyCountAPIResponse() {
 		given()
-			.spec(SpecUtil.requestSpecWithAuth(FD))
+			.spec(requestSpecWithAuth(FD))
 		.when()
 			.get("/dashboard/count")
 		.then()
-			.spec(SpecUtil.responseSpec_OK())
+			.spec(responseSpec_OK())
 			.body("data", notNullValue())
 			.body("data.size()", equalTo(3))
 			.body("data.count", everyItem(greaterThanOrEqualTo(0)))
@@ -35,13 +35,13 @@ public class CountAPITest {
 	}
 	
 	
-	@Test
+	@Test(description = "Verify if the count API response is giving correct response for invalid token", groups = {"api", "negative", "regression", "smoke"})
 	public void countAPITest_MissingAuthToken() {
 		given()
-			.spec(SpecUtil.requestSpec())
+			.spec(requestSpec())
 		.when()
 			.get("/dashboard/count")
 		.then()
-			.spec(SpecUtil.responseSpec_TEXT(401));
+			.spec(responseSpec_TEXT(401));
 	}
 }
