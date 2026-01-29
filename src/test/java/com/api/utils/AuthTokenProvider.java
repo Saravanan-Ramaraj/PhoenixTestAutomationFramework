@@ -8,7 +8,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
 import com.api.constant.Roles;
-import com.api.pojo.Usercredentials;
+import com.api.request.model.Usercredentials;
 
 import io.restassured.http.ContentType;
 
