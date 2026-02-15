@@ -6,11 +6,8 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.Matchers.equalTo;
 
-import java.io.IOException;
-
 import org.testng.annotations.Test;
 
-import com.api.request.model.Usercredentials;
 import com.dataproviders.api.bean.UserBean;
 
 public class LoginAPIDataDrivenTest {
