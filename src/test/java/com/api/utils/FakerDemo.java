@@ -29,6 +29,7 @@ public class FakerDemo {
 		System.out.println(faker.numerify("70######51"));
 		
 		System.out.println(faker.internet().emailAddress());
+		
 	}
 
 }
