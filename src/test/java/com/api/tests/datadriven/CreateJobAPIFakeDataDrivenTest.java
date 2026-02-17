@@ -12,15 +12,15 @@ import org.testng.annotations.Test;
 import com.api.constant.Roles;
 import com.api.request.model.CreateJobPayload;
 
-public class CreateJobAPIDataDrivenTest {
+public class CreateJobAPIFakeDataDrivenTest {
 	
 
 	
 	
 
-	@Test(description = "Verify if the create job API is able to create Inwarranty job", groups = {"api", "regression", "datadriven", "csv"}
+	@Test(description = "Verify if the create job API is able to create Inwarranty job", groups = {"api", "regression", "datadriven", "faker"}
 	, dataProviderClass = com.dataproviders.DataProviderUtils.class
-	, dataProvider = "CreateJobDataProvider")
+	, dataProvider = "CreateJobAPIFakerDataProvider")
 	
 	public void createJobAPITest(CreateJobPayload createJobPayload) {
 		
