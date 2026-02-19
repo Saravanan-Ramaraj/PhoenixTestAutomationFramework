@@ -39,7 +39,8 @@ public class ExcelReaderUtil2 {
 		// I want to know the indexes for the username and password in our sheet
 
 		XSSFRow headerRow = mySheet.getRow(0);
-
+		
+		//Assuming that the username and passwords are not present. So indexes are -1
 		int userNameIndex = -1;
 		int passwordIndex = -1;
 
