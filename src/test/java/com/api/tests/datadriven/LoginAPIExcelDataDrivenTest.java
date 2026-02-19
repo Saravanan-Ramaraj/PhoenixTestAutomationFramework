@@ -9,14 +9,15 @@ import static org.hamcrest.Matchers.equalTo;
 import org.testng.annotations.Test;
 
 import com.api.request.model.Usercredentials;
+import com.dataproviders.api.bean.UserBean;
 
 public class LoginAPIExcelDataDrivenTest {
 
 	@Test(description = "Verifying if login api is working for FD user", groups = { "api", "regression",
 			"datadriven" }, dataProviderClass = com.dataproviders.DataProviderUtils.class, dataProvider = "LoginAPIExcelDataProvider")
-	public void loginAPITest(Usercredentials userCredentials) {
+	public void loginAPITest(UserBean userBean) {
 
-		given().spec(requestSpec(userCredentials)).when().post("login").then().spec(responseSpec_OK()).and()
+		given().spec(requestSpec(userBean)).when().post("login").then().spec(responseSpec_OK()).and()
 				.body("message", equalTo("Success")).and()
 				.body(matchesJsonSchemaInClasspath("response-schema/LoginResponseSchema.json"));
 	}
