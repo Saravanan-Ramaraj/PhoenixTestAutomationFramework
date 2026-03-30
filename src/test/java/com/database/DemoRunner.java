@@ -5,14 +5,14 @@ import java.sql.SQLException;
 public class DemoRunner {
 
 	public static void main(String[] args) throws SQLException {
-		DatabaseManager.createConeection();
+		DatabaseManagerOld.createConeection();
 		long startTime = System.currentTimeMillis();
 
 		for (int i = 1; i <= 1000; i++) {
-			DatabaseManager.createConeection();
-			DatabaseManager.createConeection();
-			DatabaseManager.createConeection();
-			DatabaseManager.createConeection();
+			DatabaseManagerOld.createConeection();
+			DatabaseManagerOld.createConeection();
+			DatabaseManagerOld.createConeection();
+			DatabaseManagerOld.createConeection();
 		}
 
 		long endTime = System.currentTimeMillis();
